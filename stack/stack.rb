@@ -42,6 +42,3 @@ class Stack
   end
 end
 
-binding.pry
-
-puts "cookie"
