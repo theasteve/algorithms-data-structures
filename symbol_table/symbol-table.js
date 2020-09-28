@@ -7,7 +7,7 @@ class SequentialSearchST {
   }
 
   get(key) {
-    for(let x = this.first; x != null; x = x.next) {
+    for(let x = this.first; x !== null; x = x.next) {
       if(x.key === key) {
         return x.val
       }
@@ -16,7 +16,7 @@ class SequentialSearchST {
   }
 
   put(key, val) {
-    for(let x = this.first; x != null; x = x.next) {
+    for(let x = this.first; x !== null; x = x.next) {
       if(x.key === key) {
         return x.val = val
       }
@@ -34,7 +34,7 @@ class Node {
   }
 }
 
-st = new SequentialSearchST();
+const st = new SequentialSearchST();
 st.put('s', 0)
 st.put('e', 1)
 st.put('a', 2)
