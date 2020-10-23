@@ -83,13 +83,26 @@ class BinarySearchST
     @keys[i]
   end
 
-  # def floor(key)
-  #
-  # end
+  def floor(key)
+    raise 'ilegalArgumentException' if key == nil
+    raise 'NoSuchElementException' if @keys.empty?
 
-  # def delete(key)
-  #
-  # end
+    i = rank(key)
+    if keys[i] == key
+      keys[i]
+    else
+      keys[i - 1]
+    end
+  end
+
+  def delete(key)
+    raise 'ilegalArgumentException' if key.nil?
+
+    i = rank(key)
+
+    @keys.delete_at(i)
+    @vals.delete_at(i)
+  end
 end
 
 

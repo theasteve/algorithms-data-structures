@@ -89,9 +89,28 @@ class BinarySearchSt {
     return this.keys[i];
   }
 
-  // floor(key) {}
-  //
-  // delete(key) {}
+  floor(key) {
+    if(this.n === 0) {
+      throw 'noSuchElementException';
+    }
+    if(key === null) {
+      throw 'ilegalArgumentException';
+    }
+    let i = this.rank(key);
+    if(this.keys[i] === key || i === 0){
+      return this.keys[i];
+    }
+    else {
+      return this.keys[i - 1];
+    }
+  }
+
+  delete(key) {
+    if(key === null) { throw 'ilegalArgumentException' };
+    let i = this.rank(key);
+    this.keys.splice(i, 1);
+    this.vals.splice(i, 1);
+  }
 }
 
 const bst = new BinarySearchSt();
@@ -111,4 +130,3 @@ bst.put('l', 11)
 bst.put('e', 12)
 
 console.log(bst.get('e'))
-
